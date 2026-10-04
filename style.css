@@ -1,0 +1,77 @@
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --page: #eef2f7; --card: #ffffff; --border: #cbd5e1;
+  --text: #1e293b; --sub: #2563eb; --chip: #e0e7ff; --chip-text: #3730a3;
+  --btn: #2563eb; --btn-hover: #f97316;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0f172a; --card: #1e293b; --border: #475569;
+    --text: #f1f5f9; --sub: #93c5fd; --chip: #312e81; --chip-text: #e0e7ff;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0f172a; --card: #1e293b; --border: #475569;
+  --text: #f1f5f9; --sub: #93c5fd; --chip: #312e81; --chip-text: #e0e7ff;
+}
+
+body {
+  background-color: var(--page);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+}
+
+/* Bước 2: card */
+.card {
+  width: 350px;
+  max-width: 90%;
+  margin: 50px auto;
+  padding: 30px 25px;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  background-color: var(--card);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Bước 3: avatar */
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--sub);
+  margin-bottom: 10px;
+}
+
+/* Bước 4: tên và nghề nghiệp */
+#name { font-size: 28px; margin: 10px 0 5px; }
+.job { color: var(--sub); font-weight: 600; margin: 0 0 15px; }
+.bio { line-height: 1.6; margin: 0 0 20px; }
+
+/* Bước 5: kỹ năng */
+.skills { list-style: none; padding: 0; margin: 0 0 20px; }
+.skills li {
+  display: inline-block;
+  background-color: var(--chip);
+  color: var(--chip-text);
+  padding: 6px 14px;
+  border-radius: 8px;
+  margin: 4px;
+  font-size: 14px;
+}
+
+/* Bước 6: nút liên hệ */
+.btn {
+  display: inline-block;
+  padding: 10px 28px;
+  background-color: var(--btn);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.25s;
+}
+.btn:hover { background-color: var(--btn-hover); }
